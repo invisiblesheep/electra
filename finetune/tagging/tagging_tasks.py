@@ -251,3 +251,21 @@ class Chunking(TaggingTask):
 
   def __init__(self, config, tokenizer):
     super(Chunking, self).__init__(config, "chunk", tokenizer, False)
+
+class FTB(TaggingTask):
+  """Text chunking."""
+
+  def __init__(self, config, tokenizer):
+    super(FTB, self).__init__(config, "ftb", tokenizer, True)
+
+class PUD(TaggingTask):
+  """Text chunking."""
+
+  def __init__(self, config, tokenizer):
+    super(PUD, self).__init__(config, "pud", tokenizer, True)
+
+class TDT(TaggingTask):
+  """Text chunking."""
+
+  def __init__(self, config, tokenizer):
+    super(TDT, self).__init__(config, "tdt", tokenizer, True)

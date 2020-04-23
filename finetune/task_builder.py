@@ -66,5 +66,11 @@ def get_task(config: configure_finetuning.FinetuningConfig, task_name,
     return qa_tasks.SearchQA(config, tokenizer)
   elif task_name == "chunk":
     return tagging_tasks.Chunking(config, tokenizer)
+  elif task_name == "ftb":
+    return tagging_tasks.FTB(config, tokenizer)
+  elif task_name == "pud":
+    return tagging_tasks.PUD(config, tokenizer)
+  elif task_name == "tdt":
+    return tagging_tasks.TDT(config, tokenizer)
   else:
     raise ValueError("Unknown task " + task_name)
