@@ -84,7 +84,14 @@ class F1Scorer(SentenceLevelScorer):
       p = 100.0 * n_correct / n_predicted
       r = 100.0 * n_correct / n_gold
       f1 = 2 * p * r / (p + r)
+
+    correct, count = 0, 0
+    for y_true, pred in zip(self._true_labels, self._preds):
+      count += 1
+      correct += (1 if y_true == pred else 0)
+
     return [
+        ('accuracy', 100.0 * correct / count),
         ('precision', p),
         ('recall', r),
         ('f1', f1),

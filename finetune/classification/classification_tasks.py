@@ -371,8 +371,8 @@ class CoLA(ClassificationTask):
     return self._load_glue(lines, split, 1 if split == "test" else 3,
                            None, 1, split == "test")
 
-  #def get_scorer(self):
-  #  return classification_metrics.MCCScorer()
+  def get_scorer(self):
+    return classification_metrics.F1Scorer()
 
 
 class SST(ClassificationTask):
